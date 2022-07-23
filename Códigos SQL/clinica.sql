@@ -128,3 +128,112 @@ select codigo,nome,cpf from paciente order by cpf,nome;
  
  select nome,cpf from paciente
 where cpf = 110; 
+
+## exe18
+select nome,sexo,dataNascimento from paciente where cpf = 106;
+
+## exe19
+select * from paciente;
+select nome, sexo from paciente
+where codigo < '108';
+
+select nome,cpf,sexo from paciente where cpf < '108'; ## filtar sempre com primary key é recomendado
+
+## exe 20 operadores
+/*
+=
+<>
+!=
+<
+<=
+!<
+>
+>=
+!>
+BETWEEN
+IS NULL
+
+
+*/
+## EXE21
+SELECT CODIGO,NOME,CPF FROM PACIENTE WHERE CODIGO <> '101'; ## diferente ou  não igual
+select codigo,nome,sexo from paciente where codigo != '101'; ## diferente ou não igual
+
+## exe22
+
+select nome,sexo from paciente
+where codigo <= '108';
+
+## exe23
+select nome, dataNascimento from paciente where nome = 'ricacio';
+
+## exe 24
+select nome, sexo, cpf, dataNascimento from paciente where codigo between 102 and 109;
+
+## exe 25
+select  codigo,nome,cpf,sexo from paciente
+where codigo != '109';
+
+## exe 26
+select nome, codigo from paciente where cpf between '110' and '113';
+
+## exe 27
+describe paciente;
+insert into paciente (codigo,nome,sexo) values('111','Marisa','F');
+
+select nome,cpf from paciente where cpf is null;
+
+## exe28
+select nome,codigo from paciente  where dataNascimento is null;
+
+## exe29
+select codigo , nome,cpf from paciente where cpf = '109';
+
+## exe 30
+select codigo,nome,cpf from paciente where cpf >= '110';
+
+## exe 31
+select codigo,nome from paciente where codigo >= '106' and codigo <= '109';
+
+## exe32
+select codigo, nome from paciente
+where codigo between 103 and 106;
+
+##===========================================================================================================================================
+select * from clinica;
+## exe33
+select codigo,nome, local from clinica
+where codigo = '1' and local = 'PB-JP_centro';
+
+## exe34
+select codigo,nome from clinica
+where codigo = 1 or codigo = 5;
+
+## exe35
+select * from paciente;
+select codigo,nome,cpf,sexo from paciente
+where (codigo = '101' or codigo = '108') and sexo ='M';
+
+##exe 36
+select codigo,nome,cpf,sexo from paciente where codigo in('101','108') order by nome asc;
+
+## exe37
+
+select nome,sexo,dataNascimento from paciente
+where codigo= 101 or codigo = 110 order by nome asc;
+
+## exe 38
+
+select nome from paciente where not codigo = '101' order by nome;
+
+## exe39
+  select nome from paciente
+  where codigo <> '101' order by nome desc;
+  
+## exe 40
+select * from clinica;
+select nome,local from clinica where local = 'PE_recife';
+
+## exe 45 
+select * from paciente where codigo >='103' and codigo <= '106 ';
+select * from paciente where codigo between '103' and '106' order by nome;
